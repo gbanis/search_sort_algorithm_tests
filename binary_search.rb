@@ -1,5 +1,3 @@
-require 'pry'
-
 class Array
   def binary_search_wg(search_number)
     sampling_array = self
