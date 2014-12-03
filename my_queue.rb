@@ -13,7 +13,7 @@ class MyQueue
   end
 
   def add_item(item)
-    @q.push(item)
+    @q << item
   end
 
   def look
@@ -21,7 +21,7 @@ class MyQueue
   end
 
   def retrieve
-    @q.pop
+    @q.slice!(0)
   end
 
   def size
