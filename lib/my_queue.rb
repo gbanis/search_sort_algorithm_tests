@@ -43,7 +43,7 @@ end
 # Queue implementation with nodes
 
 class MyQueue2
-  attr_accessor :head
+  attr_accessor :head, :tail
 
   def initialize(first_value=nil)
     # initializes the linked list
@@ -53,11 +53,14 @@ class MyQueue2
   def push(value)
     # pushes a node at the end of the queue
     node = Node.new(value)
+
     if @head
       @head.next_node = node
     else
       @head = node
     end
+
+    @tail = node
   end
 
   def shift

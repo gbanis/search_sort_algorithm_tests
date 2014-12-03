@@ -92,10 +92,12 @@ RSpec.describe MyQueue2 do
       expect(@qq.head.value).to eq 5
     end
 
-    it 'when called twice, adds two items in the correct order' do
+    it 'adds three items in the correct order when called three times' do
       @qq.push(4)
-      @qq.push(7)
+      @qq.push(5)
+      @qq.push(6)
       expect(@qq.head.value).to eq 4
+      expect(@qq.tail.value).to eq 6
     end
   end
 
