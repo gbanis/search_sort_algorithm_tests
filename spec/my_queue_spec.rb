@@ -95,7 +95,7 @@ RSpec.describe MyQueue2 do
     it 'when called twice, adds two items in the correct order' do
       @qq.push(4)
       @qq.push(7)
-      expect(@qq.head.value).to eq 7
+      expect(@qq.head.value).to eq 4
     end
   end
 

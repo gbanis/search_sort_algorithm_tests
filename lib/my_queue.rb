@@ -51,14 +51,17 @@ class MyQueue2
   end
 
   def push(value)
-    # pushes a node into the stack
+    # pushes a node at the end of the queue
     node = Node.new(value)
-    node.next_node = @head
-    @head = node
+    if @head
+      @head.next_node = node
+    else
+      @head = node
+    end
   end
 
-  def pop
-    # pops the node from the stack
+  def shift
+    # pulls a node from the beginning of the queue
     node = @head
     @head = node.next_node
     node
