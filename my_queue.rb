@@ -29,11 +29,7 @@ class MyQueue
   end
 
   def empty?
-    @q.length > 0
-  end
-
-  def get
-    @q
+    @q.length == 0
   end
 
 end
