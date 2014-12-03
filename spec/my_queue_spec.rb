@@ -81,6 +81,7 @@ RSpec.describe MyQueue2 do
     it 'creates a queue with a first item if one is present' do
       expect(@qq2.class).to eq MyQueue2
       expect(@qq2.head.class).to eq Node
+      expect(@qq2.head.value).to eq 5
     end
 
   end
