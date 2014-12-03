@@ -1,4 +1,4 @@
-require './my_queue.rb'
+require './lib/my_queue.rb'
 
 RSpec.describe MyQueue do
 

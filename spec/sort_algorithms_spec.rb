@@ -1,4 +1,4 @@
-require './sort_algorithms.rb'
+require './lib/sort_algorithms.rb'
 
 RSpec.describe Array do
   before(:each) do

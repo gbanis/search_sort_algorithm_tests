@@ -1,4 +1,4 @@
-require './binary_search.rb'
+require './lib/binary_search.rb'
 
 RSpec.describe Array do
   before(:each) do
