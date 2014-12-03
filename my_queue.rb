@@ -1,4 +1,5 @@
 class MyQueue
+  attr_reader :q
 
   # make a new empty cueue
   # add item to the back of queue
@@ -29,6 +30,10 @@ class MyQueue
 
   def empty?
     @q.length > 0
+  end
+
+  def get
+    @q
   end
 
 end
