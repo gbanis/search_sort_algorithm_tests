@@ -112,8 +112,7 @@ RSpec.describe MyQueue2 do
       @qq.push(4)
       @qq.push(7)
       @qq.push(8)
-      expect(@qq.shift).to eq 4
-      expect(@qq.q).to eq [7,8]
+      expect(@qq.shift.value).to eq 4
     end
   end
 
