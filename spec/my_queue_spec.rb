@@ -89,13 +89,13 @@ RSpec.describe MyQueue2 do
   describe '#push' do
     it 'adds a single item to an empty queue' do
       @qq.push(5)
-      expect(@qq.q).to eq [5]
+      expect(@qq.head.value).to eq 5
     end
 
     it 'when called twice, adds two items in the correct order' do
       @qq.push(4)
       @qq.push(7)
-      expect(@qq.q).to eq [4,7]
+      expect(@qq.head.value).to eq 7
     end
   end
 
@@ -107,12 +107,12 @@ RSpec.describe MyQueue2 do
     end
   end
 
-  describe '#pop' do
+  describe '#shift' do
     it 'returns the item at the top of the queue and removes it from the queue' do
       @qq.push(4)
       @qq.push(7)
       @qq.push(8)
-      expect(@qq.pop).to eq 4
+      expect(@qq.shift).to eq 4
       expect(@qq.q).to eq [7,8]
     end
   end
