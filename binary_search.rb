@@ -26,28 +26,15 @@ class Array
     end
   end
 
-  # def binary_search_wg(search_number)
-  #   sampling_array = self
-
-  #   loop do
-  #     middle_index = (sampling_array.length/2).to_i
-  #     middle_number = sampling_array[middle_index]
-
-  #     if middle_index == 0 && middle_number != search_number
-  #       return nil
-  #     end
-
-  #     if middle_number == search_number
-  #       return self.index(middle_number)
-  #     elsif search_number > middle_number
-  #       sampling_array = sampling_array[middle_index+1..-1]
-  #     else
-  #       sampling_array = sampling_array[0..middle_index-1]
-  #     end
-
-  #   end
-  # end
-
+  # For I = 1 to N - 1
+  #   For J = 1 to N - 1
+  #     If (A(J) > A(J + 1)
+  #       Temp = A(J)
+  #       A(J) = A(J + 1)
+  #       A(J + 1) = Temp
+  #     End-If
+  #   End-For
+  # End-For
 
   def linnear_search_wg(search_number)
     i = 0
@@ -61,9 +48,3 @@ class Array
     nil
   end
 end
-
-
-
-array = [11, 21, 39, 41, 57, 89, 102, 180]
-puts array.binary_search_wg(89)
-# puts array.linnear_search_wg(41)
