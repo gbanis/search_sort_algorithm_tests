@@ -1,5 +1,3 @@
-require 'pry'
-
 class Array
   # For I = 1 to N - 1
   #   For J = 1 to N - 1
