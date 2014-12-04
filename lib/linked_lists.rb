@@ -22,20 +22,14 @@ class MyList
 
   def prepend(value)
     node = Node.new(value)
-    if @head.value == nil
-      create_first_list_node(node)
-    else
-      add_node_before_head(node)
-    end
+
+    @head.value == nil ? create_first_list_node(node) : add_node_before_head(node)
   end
 
   def append(value)
     node = Node.new(value)
-    if @head.value == nil
-      create_first_list_node(node)
-    else
-      add_node_after_tail(node)
-    end
+
+    @head.value == nil ? create_first_list_node(node) : add_node_after_tail(node)
   end
 
   private
