@@ -47,8 +47,17 @@ class MyList
     end
   end
 
-  def insert_node_after_first(value_inserted, value_of_node)
+  def insert_node_after_first(value_searched, new_value)
+    return nil unless find_first_node(value_searched)
 
+    new_node = Node.new(new_value)
+    first_node = find_first_node(value_searched)
+    if first_node == @tail
+      add_node_after_tail(new_node)
+    else
+      new_node.next_node = first_node.next_node
+      first_node.next_node = new_node
+    end
   end
 
   private

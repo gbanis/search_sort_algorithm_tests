@@ -64,15 +64,21 @@ RSpec.describe MyList do
 
   end
 
-  # describe '#insert_node_after_first' do
-  #   it 'inserts a node after the first occurance of a node with a specified value' do
-  #     @list.append(4)
-  #     @list.append(5)
-  #     @list.append(6)
-  #     @list.insert_node_after_first(5, 7)
-  #     expect(@list.find_node_after_first(5).value).to eq 7
-  #     expect(@list.find_node_after_first(7).value).to eq 6
-  #   end
-  # end
+  describe '#insert_node_after_first' do
+    it 'inserts a node after the first occurance of a node with a specified value' do
+      @list.append(4)
+      @list.append(5)
+      @list.append(6)
+      @list.insert_node_after_first(5, 7)
+      expect(@list.find_first_node(5).next_node.value).to eq 7
+      expect(@list.find_first_node(7).next_node.value).to eq 6
+    end
+    it 'returns nil if the value we search does not correspond to a value in the array' do
+      @list.append(4)
+      @list.append(5)
+      @list.append(6)
+      expect(@list.insert_node_after_first(10, 7)).to eq nil
+    end
+  end
 
 end
