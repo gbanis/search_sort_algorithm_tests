@@ -32,6 +32,25 @@ class MyList
     @head.value == nil ? create_first_list_node(node) : add_node_after_tail(node)
   end
 
+  def find_first_node(value)
+    current_node = @head
+    loop do
+      if current_node.value == value
+        return current_node
+      else
+        if current_node.next_node
+          current_node = current_node.next_node
+        else
+          return nil
+        end
+      end
+    end
+  end
+
+  def insert_node_after_first(value_inserted, value_of_node)
+
+  end
+
   private
 
   def create_first_list_node(node)

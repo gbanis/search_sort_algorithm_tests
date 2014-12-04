@@ -41,4 +41,38 @@ RSpec.describe MyList do
     end
   end
 
+
+  describe '#find_first_node' do
+    it 'returns the @head node if we are searching for the value of @head' do
+      @list.append(4)
+      @list.append(5)
+      @list.append(6)
+      expect(@list.find_first_node(4).value).to eq 4
+    end
+    it 'returns the node after the first occurance of a node with the specified value' do
+      @list.append(4)
+      @list.append(5)
+      @list.append(6)
+      expect(@list.find_first_node(5).value).to eq 5
+    end
+    it 'returns nil if the value we are searching for does not exist in the list' do
+      @list.append(4)
+      @list.append(5)
+      @list.append(6)
+      expect(@list.find_first_node(10)).to eq nil
+    end
+
+  end
+
+  # describe '#insert_node_after_first' do
+  #   it 'inserts a node after the first occurance of a node with a specified value' do
+  #     @list.append(4)
+  #     @list.append(5)
+  #     @list.append(6)
+  #     @list.insert_node_after_first(5, 7)
+  #     expect(@list.find_node_after_first(5).value).to eq 7
+  #     expect(@list.find_node_after_first(7).value).to eq 6
+  #   end
+  # end
+
 end
