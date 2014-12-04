@@ -25,8 +25,7 @@ class MyList
     if @head.value == nil
       create_first_list_node(node)
     else
-      node.next_node = @head
-      @head = node
+      add_node_before_head(node)
     end
   end
 
@@ -35,9 +34,7 @@ class MyList
     if @head.value == nil
       create_first_list_node(node)
     else
-      node = Node.new(value)
-      @tail.next_node = node
-      @tail = node
+      add_node_after_tail(node)
     end
   end
 
@@ -46,6 +43,16 @@ class MyList
   def create_first_list_node(node)
     @head = node
     @tail = @head
+  end
+
+  def add_node_before_head(node)
+    node.next_node = @head
+    @head = node
+  end
+
+  def add_node_after_tail(node)
+    @tail.next_node = node
+    @tail = node
   end
 
 end
